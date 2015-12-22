@@ -1,8 +1,16 @@
 package command
 
-import "github.com/codegangsta/cli"
+import (
+	"fmt"
+	"github.com/codegangsta/cli"
+)
 
 func CmdAdd(c *cli.Context) {
-	// Write your code here
+	if len(c.Args()) == 0 {
+		fmt.Println("[ERROR] Must set task title")
+		return
+	}
 
+	title := c.Args()[0]
+	fmt.Println("Added new task :", title)
 }
