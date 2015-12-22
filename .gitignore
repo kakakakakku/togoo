@@ -1,1 +1,7 @@
 *.test
+
+# SQLite Database
+togoo.db
+
+# Binary
+togoo
