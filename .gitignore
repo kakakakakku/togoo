@@ -2,6 +2,7 @@
 
 # SQLite Database
 togoo.db
+togoo.db-journal
 
 # Binary
 togoo
