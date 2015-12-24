@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"github.com/codegangsta/cli"
 	"log"
+	"strconv"
+	"time"
 )
 
 func CmdAdd(c *cli.Context) {
@@ -22,7 +24,9 @@ func CmdAdd(c *cli.Context) {
 	}
 	defer db.Close()
 
-	_, err = db.Exec("INSERT INTO todos(title, is_done) values('" + title + "', 0)")
+	now := strconv.FormatInt(time.Now().Unix(), 10)
+
+	_, err = db.Exec("INSERT INTO todos(title, is_done, created_at, updated_at) values('" + title + "', 0, " + now + ", " + now + ")")
 	if err != nil {
 		log.Fatal(err)
 	}

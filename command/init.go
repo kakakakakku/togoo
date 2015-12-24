@@ -18,8 +18,13 @@ func CmdInit(c *cli.Context) {
 	defer db.Close()
 
 	sqlStmt := `
-		CREATE TABLE todos (id integer NOT NULL PRIMARY KEY, title text NOT NULL, is_done integer NOT NULL);
-		DELETE FROM todos;
+		CREATE TABLE todos (
+			id integer NOT NULL PRIMARY KEY,
+			title text NOT NULL,
+			is_done integer NOT NULL,
+			created_at integer NOT NULL,
+			updated_at integer NOT NULL
+		);
 	`
 	_, err = db.Exec(sqlStmt)
 	if err != nil {
