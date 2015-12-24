@@ -9,9 +9,9 @@ import (
 )
 
 func CmdInit(c *cli.Context) {
-	os.Remove("./togoo.db")
+	os.Remove(db_path())
 
-	db, err := sql.Open("sqlite3", "./togoo.db")
+	db, err := sql.Open("sqlite3", db_path())
 	if err != nil {
 		log.Fatal(err)
 	}

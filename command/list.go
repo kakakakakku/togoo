@@ -13,7 +13,7 @@ func CmdList(c *cli.Context) {
 		return
 	}
 
-	db, err := sql.Open("sqlite3", "./togoo.db")
+	db, err := sql.Open("sqlite3", db_path())
 	if err != nil {
 		log.Fatal(err)
 	}

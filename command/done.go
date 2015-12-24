@@ -16,7 +16,7 @@ func CmdDone(c *cli.Context) {
 	id := c.Args()[0]
 	fmt.Printf("Task %s is done\n", id)
 
-	db, err := sql.Open("sqlite3", "./togoo.db")
+	db, err := sql.Open("sqlite3", db_path())
 	if err != nil {
 		log.Fatal(err)
 	}
