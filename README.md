@@ -1,15 +1,38 @@
-# togoo
+# Togoo
 
 ## Description
 
-## Usage
+Simple CLI TODO tool, using Golang and SQLite.
 
 ## Install
 
 To install, use `go get`:
 
 ```bash
-$ go get -d github.com/kakakakakku/togoo
+$ go get -u github.com/kakakakakku/togoo
+$ togoo init
+```
+
+## Usage
+
+```bash
+$ togoo add sample_task1
+$ togoo add sample_task2
+$ togoo list
+| --- | -------------------------------------------------- | ------- |
+| No  | Title                                              | Status  |
+| --- | -------------------------------------------------- | ------- |
+|   1 | sample_task1                                       | -       |
+|   2 | sample_task2                                       | -       |
+| --- | -------------------------------------------------- | ------- |
+$ togoo done 1
+$ togoo list
+| --- | -------------------------------------------------- | ------- |
+| No  | Title                                              | Status  |
+| --- | -------------------------------------------------- | ------- |
+|   1 | sample_task1                                       | Done    |
+|   2 | sample_task2                                       | -       |
+| --- | -------------------------------------------------- | ------- |
 ```
 
 ## Contribution
@@ -24,4 +47,4 @@ $ go get -d github.com/kakakakakku/togoo
 
 ## Author
 
-[kakakakakku](https://github.com/kakakakakku)
+* [kakakakakku](https://github.com/kakakakakku)
