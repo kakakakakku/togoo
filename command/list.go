@@ -34,8 +34,16 @@ func CmdList(c *cli.Context) {
 		var title string
 		var is_done int
 		rows.Scan(&id, &title, &is_done)
-		fmt.Printf("| %3d | %-50s | %-7d |\n", id, title, is_done)
+		fmt.Printf("| %3d | %-50s | %-7s |\n", id, title, done_label(is_done))
 	}
 
 	fmt.Printf("| %-3s | %-50s | %-7s |\n", "---", "--------------------------------------------------", "-------")
+}
+
+func done_label(is_done int) string {
+	if is_done == 0 {
+		return "-"
+	} else {
+		return "Done"
+	}
 }
