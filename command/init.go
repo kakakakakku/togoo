@@ -3,7 +3,6 @@ package command
 import (
 	"database/sql"
 	"github.com/codegangsta/cli"
-	_ "github.com/mattn/go-sqlite3"
 	"log"
 	"os"
 )

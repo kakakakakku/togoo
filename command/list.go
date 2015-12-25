@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"fmt"
 	"github.com/codegangsta/cli"
-	_ "github.com/mattn/go-sqlite3"
 	"log"
 )
 
