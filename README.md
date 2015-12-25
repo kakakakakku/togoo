@@ -1,5 +1,7 @@
 # Togoo
 
+[![Build Status](https://travis-ci.org/Kakakakakku/togoo.svg)](https://travis-ci.org/Kakakakakku/togoo)
+
 ## Description
 
 Simple CLI TODO tool, using Golang and SQLite.
