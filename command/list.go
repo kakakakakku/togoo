@@ -14,7 +14,7 @@ func CmdList(c *cli.Context) {
 		return
 	}
 
-	db, err := sql.Open("sqlite3", db_path())
+	db, err := sql.Open("sqlite3", dbPath())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -33,16 +33,16 @@ func CmdList(c *cli.Context) {
 	for rows.Next() {
 		var id int
 		var title string
-		var is_done int
-		rows.Scan(&id, &title, &is_done)
-		fmt.Printf("| %3d | %-50s | %-7s |\n", id, title, done_label(is_done))
+		var isDone int
+		rows.Scan(&id, &title, &isDone)
+		fmt.Printf("| %3d | %-50s | %-7s |\n", id, title, doneLabel(isDone))
 	}
 
 	fmt.Printf("| %-3s | %-50s | %-7s |\n", "---", "--------------------------------------------------", "-------")
 }
 
-func done_label(is_done int) string {
-	if is_done == 0 {
+func doneLabel(isDone int) string {
+	if isDone == 0 {
 		return "-"
 	} else {
 		return "Done"

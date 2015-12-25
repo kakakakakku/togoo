@@ -4,7 +4,7 @@ import (
 	"github.com/mitchellh/go-homedir"
 )
 
-func db_path() string {
+func dbPath() string {
 	home, err := homedir.Dir()
 	if err != nil {
 	}

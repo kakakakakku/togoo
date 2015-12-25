@@ -10,9 +10,9 @@ import (
 
 // CmdInit create database and tables.
 func CmdInit(c *cli.Context) {
-	os.Remove(db_path())
+	os.Remove(dbPath())
 
-	db, err := sql.Open("sqlite3", db_path())
+	db, err := sql.Open("sqlite3", dbPath())
 	if err != nil {
 		log.Fatal(err)
 	}

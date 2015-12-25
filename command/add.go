@@ -19,7 +19,7 @@ func CmdAdd(c *cli.Context) {
 	title := c.Args()[0]
 	fmt.Println("Added new task :", title)
 
-	db, err := sql.Open("sqlite3", db_path())
+	db, err := sql.Open("sqlite3", dbPath())
 	if err != nil {
 		log.Fatal(err)
 	}
