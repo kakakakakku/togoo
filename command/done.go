@@ -7,6 +7,7 @@ import (
 	"log"
 )
 
+// CmdDone mark task as finished.
 func CmdDone(c *cli.Context) {
 
 	if len(c.Args()) != 1 {

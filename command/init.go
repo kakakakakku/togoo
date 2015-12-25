@@ -8,6 +8,7 @@ import (
 	"os"
 )
 
+// CmdInit create database and tables.
 func CmdInit(c *cli.Context) {
 	os.Remove(db_path())
 

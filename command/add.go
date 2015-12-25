@@ -9,6 +9,7 @@ import (
 	"time"
 )
 
+// CmdAdd add new task.
 func CmdAdd(c *cli.Context) {
 	if len(c.Args()) == 0 {
 		fmt.Println("[ERROR] Must set task title")

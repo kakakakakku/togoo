@@ -8,6 +8,7 @@ import (
 	"log"
 )
 
+// CmdList list all tasks.
 func CmdList(c *cli.Context) {
 	if len(c.Args()) != 0 {
 		return
