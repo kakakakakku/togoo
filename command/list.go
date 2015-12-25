@@ -44,7 +44,6 @@ func CmdList(c *cli.Context) {
 func doneLabel(isDone int) string {
 	if isDone == 0 {
 		return "-"
-	} else {
-		return "Done"
 	}
+	return "Done"
 }
