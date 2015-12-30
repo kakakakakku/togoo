@@ -10,12 +10,19 @@ import (
 
 var GlobalFlags = []cli.Flag{}
 
+var ForceFlags = []cli.Flag{
+	cli.BoolFlag{
+		Name:  "force, f",
+		Usage: "Force initialize even if database already existed.",
+	},
+}
+
 var Commands = []cli.Command{
 	{
 		Name:   "init",
 		Usage:  "",
 		Action: command.CmdInit,
-		Flags:  []cli.Flag{},
+		Flags:  ForceFlags,
 	},
 	{
 		Name:   "add",

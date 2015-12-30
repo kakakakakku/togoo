@@ -2,14 +2,26 @@ package command
 
 import (
 	"database/sql"
-	"github.com/codegangsta/cli"
 	"log"
 	"os"
+
+	"github.com/codegangsta/cli"
 )
 
 // CmdInit create database and tables.
 func CmdInit(c *cli.Context) {
-	os.Remove(dbPath())
+
+	isDatabaseExists := exists(dbPath())
+	isForceMode := c.String("force")
+
+	if isForceMode == "false" && isDatabaseExists {
+		println("Database is already existed")
+		return
+	}
+
+	if isForceMode == "true" {
+		os.Remove(dbPath())
+	}
 
 	db, err := sql.Open("sqlite3", dbPath())
 	if err != nil {
