@@ -2,9 +2,12 @@ package command
 
 import (
 	"database/sql"
-	"fmt"
-	"github.com/codegangsta/cli"
 	"log"
+	"os"
+	"strconv"
+
+	"github.com/codegangsta/cli"
+	"github.com/olekukonko/tablewriter"
 )
 
 // CmdList list all tasks.
@@ -25,19 +28,21 @@ func CmdList(c *cli.Context) {
 	}
 	defer rows.Close()
 
-	fmt.Printf("| %-3s | %-50s | %-7s |\n", "---", "--------------------------------------------------", "-------")
-	fmt.Printf("| %-3s | %-50s | %-7s |\n", "No", "Title", "Status")
-	fmt.Printf("| %-3s | %-50s | %-7s |\n", "---", "--------------------------------------------------", "-------")
+	data := [][]string{}
 
 	for rows.Next() {
 		var id int
 		var title string
 		var isDone int
 		rows.Scan(&id, &title, &isDone)
-		fmt.Printf("| %3d | %-50s | %-7s |\n", id, title, doneLabel(isDone))
+		data = append(data, []string{strconv.Itoa(id), title, doneLabel(isDone)})
 	}
 
-	fmt.Printf("| %-3s | %-50s | %-7s |\n", "---", "--------------------------------------------------", "-------")
+	table := tablewriter.NewWriter(os.Stdout)
+	table.SetHeader([]string{"No", "Title", "Status"})
+	table.SetBorder(true)
+	table.AppendBulk(data)
+	table.Render()
 }
 
 func doneLabel(isDone int) string {
