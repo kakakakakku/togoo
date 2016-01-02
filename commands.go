@@ -18,10 +18,17 @@ var forceFlags = []cli.Flag{
 	},
 }
 
-var allFlags = []cli.Flag{
+var allListFlags = []cli.Flag{
 	cli.BoolFlag{
 		Name:  "all, a",
 		Usage: "List all tasks.",
+	},
+}
+
+var allDeleteFlags = []cli.Flag{
+	cli.BoolFlag{
+		Name:  "all, a",
+		Usage: "Delete all tasks.",
 	},
 }
 
@@ -43,13 +50,19 @@ var Commands = []cli.Command{
 		Name:   "list",
 		Usage:  "",
 		Action: command.CmdList,
-		Flags:  allFlags,
+		Flags:  allListFlags,
 	},
 	{
 		Name:   "done",
 		Usage:  "",
 		Action: command.CmdDone,
 		Flags:  []cli.Flag{},
+	},
+	{
+		Name:   "delete",
+		Usage:  "",
+		Action: command.CmdDelete,
+		Flags:  allDeleteFlags,
 	},
 }
 
