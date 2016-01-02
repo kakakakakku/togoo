@@ -15,6 +15,17 @@ $ go get -u github.com/kakakakakku/togoo
 $ togoo init
 ```
 
+## Commands
+
+```
+init
+add
+list
+done
+delete
+help, h
+```
+
 ## Usage
 
 ```bash
