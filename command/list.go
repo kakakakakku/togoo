@@ -16,13 +16,22 @@ func CmdList(c *cli.Context) {
 		return
 	}
 
+	isAllMode := c.String("all")
+
+	var s string
+	if isAllMode == "true" {
+		s = "SELECT id, title, is_done FROM todos"
+	} else {
+		s = "SELECT id, title, is_done FROM todos WHERE is_done = 0"
+	}
+
 	db, err := sql.Open("sqlite3", dbPath())
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer db.Close()
 
-	rows, err := db.Query("SELECT id, title, is_done FROM todos")
+	rows, err := db.Query(s)
 	if err != nil {
 		log.Fatal(err)
 	}

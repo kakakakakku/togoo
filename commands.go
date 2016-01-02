@@ -17,6 +17,13 @@ var ForceFlags = []cli.Flag{
 	},
 }
 
+var AllFlags = []cli.Flag{
+	cli.BoolFlag{
+		Name:  "all, a",
+		Usage: "List all tasks.",
+	},
+}
+
 var Commands = []cli.Command{
 	{
 		Name:   "init",
@@ -34,7 +41,7 @@ var Commands = []cli.Command{
 		Name:   "list",
 		Usage:  "",
 		Action: command.CmdList,
-		Flags:  []cli.Flag{},
+		Flags:  AllFlags,
 	},
 	{
 		Name:   "done",
