@@ -1,6 +1,6 @@
 # Togoo
 
-[![Build Status](https://travis-ci.org/Kakakakakku/togoo.svg)](https://travis-ci.org/Kakakakakku/togoo)
+[![Build Status](https://travis-ci.org/kakakakakku/togoo.svg)](https://travis-ci.org/kakakakakku/togoo)
 
 ## Description
 
