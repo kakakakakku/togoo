@@ -47,11 +47,13 @@ func CmdList(c *cli.Context) {
 		data = append(data, []string{strconv.Itoa(id), title, doneLabel(isDone)})
 	}
 
-	table := tablewriter.NewWriter(os.Stdout)
-	table.SetHeader([]string{"No", "Title", "Status"})
-	table.SetBorder(true)
-	table.AppendBulk(data)
-	table.Render()
+	if len(data) > 0 {
+		table := tablewriter.NewWriter(os.Stdout)
+		table.SetHeader([]string{"No", "Title", "Status"})
+		table.SetBorder(true)
+		table.AppendBulk(data)
+		table.Render()
+	}
 }
 
 func doneLabel(isDone int) string {
