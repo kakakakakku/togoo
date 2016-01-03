@@ -19,9 +19,9 @@ $ togoo init
 
 ```
 init
-add
-list
-done
+add, a
+list, l
+done, d
 delete
 help, h
 ```
