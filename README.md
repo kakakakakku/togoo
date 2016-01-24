@@ -20,6 +20,7 @@ $ togoo init
 ```
 init
 add, a
+update, u
 list, l
 done, d
 delete

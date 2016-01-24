@@ -48,6 +48,13 @@ var Commands = []cli.Command{
 		Flags:   []cli.Flag{},
 	},
 	{
+		Name:    "update",
+		Aliases: []string{"u"},
+		Usage:   "Update task",
+		Action:  command.CmdUpdate,
+		Flags:   []cli.Flag{},
+	},
+	{
 		Name:    "list",
 		Aliases: []string{"l"},
 		Usage:   "Show all tasks",
