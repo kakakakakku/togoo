@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"strconv"
+	"strings"
 	"time"
 
 	"database/sql"
@@ -13,13 +14,13 @@ import (
 
 // CmdUpdate update task.
 func CmdUpdate(c *cli.Context) {
-	if len(c.Args()) != 2 {
+	if len(c.Args()) <= 2 {
 		fmt.Println("[ERROR] Must set task id and title")
 		return
 	}
 
 	id := c.Args()[0]
-	title := c.Args()[1]
+	title := strings.Join(c.Args()[1:], " ")
 
 	db, err := sql.Open("sqlite3", dbPath())
 	if err != nil {
