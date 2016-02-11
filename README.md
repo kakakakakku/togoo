@@ -1,10 +1,8 @@
-# Togoo
+# Togoo [![Build Status](https://travis-ci.org/kakakakakku/togoo.svg)](https://travis-ci.org/kakakakakku/togoo)
 
-[![Build Status](https://travis-ci.org/kakakakakku/togoo.svg)](https://travis-ci.org/kakakakakku/togoo)
+Togoo : Simple CLI TODO Tool, using Golang and SQLite.
 
-## Description
-
-Simple CLI TODO tool, using Golang and SQLite.
+![Usage](images/usage.gif)
 
 ## Install
 
@@ -30,23 +28,29 @@ help, h
 ## Usage
 
 ```bash
-$ togoo add sample_task1
-$ togoo add sample_task2
-$ togoo list
-+----+--------------+--------+
-| NO |    TITLE     | STATUS |
-+----+--------------+--------+
-|  1 | sample_task1 | -      |
-|  2 | sample_task2 | -      |
-+----+--------------+--------+
-$ togoo done 1
-$ togoo list
-+----+--------------+--------+
-| NO |    TITLE     | STATUS |
-+----+--------------+--------+
-|  1 | sample_task1 | Done   |
-|  2 | sample_task2 | -      |
-+----+--------------+--------+
+➜  ~  togoo add xxx
+➜  ~  togoo add yyy
+➜  ~  togoo list
++----+-------+--------+
+| NO | TITLE | STATUS |
++----+-------+--------+
+|  1 | xxx   | -      |
+|  2 | yyy   | -      |
++----+-------+--------+
+➜  ~  togoo done 1
+➜  ~  togoo list
++----+-------+--------+
+| NO | TITLE | STATUS |
++----+-------+--------+
+|  2 | yyy   | -      |
++----+-------+--------+
+➜  ~  togoo list -a
++----+-------+--------+
+| NO | TITLE | STATUS |
++----+-------+--------+
+|  1 | xxx   | Done   |
+|  2 | yyy   | -      |
++----+-------+--------+
 ```
 
 ## Contribution
