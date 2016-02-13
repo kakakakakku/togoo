@@ -1,4 +1,4 @@
-# Togoo [![Build Status](https://travis-ci.org/kakakakakku/togoo.svg)](https://travis-ci.org/kakakakakku/togoo)
+# Togoo [![Build Status](https://travis-ci.org/kakakakakku/togoo.svg)](https://travis-ci.org/kakakakakku/togoo) [![Go Report Card](https://goreportcard.com/badge/github.com/kakakakakku/togoo)](https://goreportcard.com/report/github.com/kakakakakku/togoo)
 
 Togoo : Simple CLI TODO Tool, using Golang and SQLite.
 
