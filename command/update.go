@@ -14,7 +14,7 @@ import (
 
 // CmdUpdate update task.
 func CmdUpdate(c *cli.Context) {
-	if len(c.Args()) <= 2 {
+	if len(c.Args()) < 2 {
 		fmt.Println("[ERROR] Must set task id and title")
 		return
 	}
